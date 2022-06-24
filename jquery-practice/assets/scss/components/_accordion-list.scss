@@ -1,0 +1,28 @@
+.accordion-list {
+	>li {
+		border: 1px solid #eeeeee;
+		margin-bottom: 20px;
+
+		>h3 {
+			padding: 20px;
+			font-size: 1.1rem;
+
+			@extend %flex-row-between;
+
+			&::after {
+				content:'+';
+				transition: transform 300ms;
+			}
+
+			&.active::after {
+				transform: rotateZ(45deg);
+			}
+		}
+
+		.answer {
+			padding: 20px;
+			padding-top: 0;
+			font-size: 0.9rem;
+		}
+	}
+}

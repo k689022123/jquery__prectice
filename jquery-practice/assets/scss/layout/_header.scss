@@ -1,0 +1,37 @@
+.header {
+	min-height: 100vh;
+	color: $color_white;
+	padding: #{$height_navbar + 20px} 0;
+	box-sizing: border-box;
+
+	@extend %flex-column-center;
+
+	&__title{
+		letter-spacing: 5px;
+		font-size: 4rem;
+		font-weight: 500;
+
+		@extend %inline-flex-center;
+
+		@include phone-width {
+			font-size: 2rem;
+		}
+
+		img {
+			height: 256px;
+
+			@include phone-width {
+				height: 128px;
+			}
+		}
+	}
+
+	&__content{
+		@extend %layout_container;
+
+		font-size: 1.3rem;
+		line-height: 1.6;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+}

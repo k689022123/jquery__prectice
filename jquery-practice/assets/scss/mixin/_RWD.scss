@@ -1,0 +1,7 @@
+$device-size_sm: 556px;
+
+@mixin phone-width() {
+	@media all and (max-width: $device-size_sm) {
+		@content
+	}
+}

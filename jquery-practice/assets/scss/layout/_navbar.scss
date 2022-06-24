@@ -1,0 +1,25 @@
+.navbar {
+	position:absolute;
+	display: flex;
+	top: -$height_navbar;
+	height: $height_navbar;
+	width: 100%;
+	background-color:rgba(255, 255, 255, 0.5);
+	overflow: auto;
+
+	a {
+		padding: $padding-size_button;
+		color: $color_accent--dark;
+		text-decoration: none;
+		letter-spacing: 2px;
+		font-size: 1.15rem;
+		transition: background-color 300ms;
+		word-break: keep-all;
+
+		@extend %flex-center;
+
+		&.active, &:hover {
+			background-color: $color_white;
+		}
+	}
+}

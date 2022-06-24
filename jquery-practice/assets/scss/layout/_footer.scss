@@ -1,0 +1,8 @@
+.footer {
+	height: $height_footer;
+	color: $color_white;
+	font-size:1.25rem;
+
+	@extend %flex-center;
+	@extend %layout_container;
+}

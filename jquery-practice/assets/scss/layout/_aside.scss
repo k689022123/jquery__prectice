@@ -1,0 +1,103 @@
+.aside {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	height: 100%;
+	width: $width_aside;
+
+	&__mask {
+		visibility: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		opacity: 0;
+		transition: 300ms;
+		cursor: pointer;
+
+		&.active {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&__menu {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		z-index: 10;
+		background-color: rgba(255, 255, 255, 0.3);
+		cursor: pointer;
+
+		@include circle(64px);
+		@extend %flex-center;
+
+		> b{
+			position: absolute;
+			width: 50%;
+			height: 4px;
+			background-color: $color_accent;
+			transition: margin-top 300ms, transform 400ms;
+
+			&:nth-child(1) {
+				margin-top: -20px;
+			}
+
+			&:nth-child(3) {
+				margin-top: 20px;
+			}
+		}
+
+		&.active{
+			>b{
+				margin-top: 0;
+				&:nth-child(1) {
+					transform: rotateZ(45deg);
+				}
+
+				&:nth-child(2), &:nth-child(3) {
+					transform: rotateZ(135deg);
+				}
+			}
+		}
+	}
+
+	&__container {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: $width_aside;
+		background-color: $color_white;
+		transition: transform 400ms;
+		transform: translateX(100%);
+
+		&.active {
+			transform: none;
+		}
+	}
+
+	&__links {
+		margin: 60px 20px;
+	}
+
+	&__go-top {
+		position: fixed;
+		right: 0;
+		bottom: 40px;
+		transition: transform 300ms;
+		transform: translateX(100%);
+
+		img {
+			width: 100px;
+		}
+
+		&.active {
+			transform: none;
+		}
+	}
+}
